@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Signup extends Component {
   constructor(props) {
@@ -19,6 +20,25 @@ class Signup extends Component {
     event.preventDefault();
     console.log('signup form, username:');
     console.log(this.state.username);
+    axios.post('/', {
+      username: this.state.username,
+      password: this.state.password
+    })
+      .then(response => {
+        console.log(response);
+        if (response.data) {
+          console.log('Successful Signup');
+          this.setState({
+            redirectTo: '/login'
+          });
+        } else {
+          console.log('Signup Error');
+        }
+      })
+      .catch(error => {
+        console.log('Server Signup Error');
+        console.log(error);
+      });
   }
 
   render() {
