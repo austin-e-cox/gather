@@ -6,7 +6,13 @@ class Signup extends Component {
     this.state = {
       username: '',
       password: ''
-    }
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   handleSubmit(event) {
@@ -17,7 +23,7 @@ class Signup extends Component {
 
   render() {
     return (
-      <>
+      <form onSubmit={this.handleSubmit}>
         <h1>Signup Page</h1>
         <label htmlFor="username">Username:</label>
         <input
@@ -36,9 +42,8 @@ class Signup extends Component {
         />
         <br />
         <input
-          type="submit"
-        />
-      </>
+          type="submit" value="Submit" />
+      </form>
     );
   }
 };
