@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 const db = require('./config/keys').mongoURI;
 
 mongoose.connect(db, { useNewUrlParser: true })
-  .then(console.log('Succesfully Connected to DB...'))
+  .then(() => console.log('Succesfully Connected to DB...'))
   .catch(err => console.log(err));
 
 // Set and listen to PORT...
-const port = PROCESS.ENV.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}!`));
