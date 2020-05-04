@@ -9,6 +9,12 @@ class Signup extends Component {
     }
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log('signup form, username:');
+    console.log(this.state.username);
+  }
+
   render() {
     return (
       <>
@@ -20,11 +26,17 @@ class Signup extends Component {
           value={this.state.username}
           onChange={this.handleChange}
         />
+        <br />
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
           name="password"
           value={this.state.password}
           onChange={this.handleChange}
+        />
+        <br />
+        <input
+          type="submit"
         />
       </>
     );
