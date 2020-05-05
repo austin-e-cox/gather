@@ -48,3 +48,51 @@ router.post('/register', (req, res) => {
     }
   });
 });
+
+// Create login endpoint...
+router.post('/login', (req, res) => {
+
+  // Form validation...
+  const { errors, isValid } = validateLoginInput(req.body);
+
+  // Check validation...
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  // Save User email and password...
+  const email = req.body.email;
+  const password = req.body.password;
+
+  // Find User by email...
+  User.findOne({ email }).then(user => {
+    // Check if User exists...
+    if (!user) {
+      return res.status(404).json({ emailNotFound: 'Email Not Found...'});
+    }
+  });
+
+  // Check password...
+  bcrypt.compare(password, user.password).then(isMatch => {
+    if (isMatch) {
+      // User Matched...
+      // Create JWT Payload...
+      const payload = {
+        id: user.id,
+        name: user.name
+      };
+
+      // Sign token...
+      jwt.sign(payload, keys.secretOrKey, { expiresIn: 1209600 }, (err, token) => {
+        res.json({
+          success: true,
+          token: 'Bearer ' + token
+        });
+      });
+    } else {
+      return res.status(400).json({ passwordIncorrect: 'Password Incorrect...'});
+    }
+  });
+});
+
+module.exports = router;
