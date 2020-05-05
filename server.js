@@ -1,18 +1,38 @@
+// Pull in required deps...
 const express = require('express');
-const path = require('path');
-const PORT = process.env.PORT || 3001;
-const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport');
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://admin:75llama-hunter@ds031597.mlab.com:31597/heroku_mn5v1j8t');
+// Pull in users API...
+const users = require('./routes/api/users');
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
+// Initialize app using express...
+const app = express();
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
+// Apply bodyParser so it can be used...
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+app.use(bodyParser.json());
+
+//Pull in our MongoDB URI and connect to DB...
+const db = require('./config/keys').mongoURI;
+
+mongoose.connect(db, { useNewUrlParser: true })
+  .then(() => console.log('Succesfully Connected to DB...'))
+  .catch(err => console.log(err));
+
+// Passport Middleware...
+app.use(passport.initialize());
+
+// Passport Config...
+require('./config/passport')(passport);
+
+// Routes
+app.use('/api/users', users);
+
+// Set and listen to PORT...
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}!`));
