@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { registerUser } from "../../actions/authActions";
+import classnames from "classnames";
 
 class Register extends Component {
   constructor() {
@@ -10,6 +14,12 @@ class Register extends Component {
       password: '',
       password2: '',
       errors: {}
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
     }
   }
 
@@ -27,8 +37,9 @@ class Register extends Component {
       password2: this.state.password2
     }
 
-    console.log(newUser);
+    this.props.registerUser(newUser, this.props.history);
   }
+
 
   render() {
     const { errors } = this.state;
@@ -46,7 +57,11 @@ class Register extends Component {
               error={errors.name}
               id="name"
               type="text"
+              className={classnames('', {
+                invalid: errors.name
+              })}
             />
+            <span style={{color: 'red'}}>{errors.name}</span>
           </div>
           <div>
             <label htmlFor="email">Email</label>
@@ -56,7 +71,11 @@ class Register extends Component {
               error={errors.email}
               id="email"
               type="email"
+              className={classnames('', {
+                invalid: errors.email
+              })}
             />
+            <span style={{color: 'red'}}>{errors.email}</span>
           </div>
           <div>
             <label htmlFor="password">Password</label>
@@ -66,7 +85,11 @@ class Register extends Component {
               error={errors.password}
               id="password"
               type="password"
+              className={classnames('', {
+                invalid: errors.password
+              })}
             />
+            <span style={{color: 'red'}}>{errors.password}</span>
           </div>
           <div>
             <label htmlFor="password2">Confirm Password</label>
@@ -76,7 +99,11 @@ class Register extends Component {
               error={errors.password2}
               id="password2"
               type="password"
+              className={classnames('', {
+                invalid: errors.password2
+              })}
             />
+            <span style={{color: 'red'}}>{errors.password2}</span>
           </div>
           <button type="submit">Register</button>
         </form>
@@ -85,4 +112,18 @@ class Register extends Component {
   }
 }
 
-export default Register;
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(Register));
