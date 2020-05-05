@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //Pull in our MongoDB URI and connect to DB...
-const db = require('./config/keys').mongoURI;
+const db = process.env.MONGO_URI;
 
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('Succesfully Connected to DB...'))
