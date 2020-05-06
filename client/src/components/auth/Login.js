@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions/authActions';
+import classnames from 'classnames';
 
 class Login extends Component {
   constructor() {
@@ -11,11 +15,30 @@ class Login extends Component {
     }
   }
 
-  onChange(event) {
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      // Push user to dashboard when they login...
+      this.props.history.push("/dashboard");
+    }
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
+
+  handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
   }
 
-  onSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
 
     const userData = {
@@ -23,7 +46,7 @@ class Login extends Component {
       password: this.state.password,
     }
 
-    console.log(userData);
+    this.props.loginUser(userData);
   }
 
   render() {
@@ -33,26 +56,34 @@ class Login extends Component {
       <div>
         <Link to="/">Back to Landing</Link>
         <p>Don't have an account?<Link to="/register">Register</Link></p>
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="email">Email</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.email}
               error={errors.email}
               id="email"
               type="email"
+              className={classnames('', {
+                invalid: errors.email || errors.emailnotfound
+              })}
             />
+            <span style={{color: 'red'}}>{errors.email}{errors.emailnotfound}</span>
           </div>
           <div>
             <label htmlFor="password">Password</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.password}
               error={errors.password}
               id="password"
               type="password"
+              className={classnames('', {
+                invalid: errors.password || errors.passwordincorrect
+              })}
             />
+            <span style={{color: 'red'}}>{errors.password}{errors.passwordincorrect}</span>
           </div>
           <button type="submit">Login</button>
         </form>
@@ -61,4 +92,16 @@ class Login extends Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);
