@@ -14,7 +14,7 @@ class Register extends Component {
       password: '',
       password2: '',
       errors: {}
-    }
+    };
   }
 
   componentDidMount() {
@@ -30,11 +30,11 @@ class Register extends Component {
     }
   }
 
-  onChange(event) {
+  handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
   }
 
-  onSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
 
     const newUser = {
@@ -55,11 +55,11 @@ class Register extends Component {
       <div>
         <Link to="/">Back to Landing</Link>
         <p>Already have an account?<Link to="/login">Login</Link></p>
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="name">Name</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.name}
               error={errors.name}
               id="name"
@@ -73,7 +73,7 @@ class Register extends Component {
           <div>
             <label htmlFor="email">Email</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.email}
               error={errors.email}
               id="email"
@@ -87,7 +87,7 @@ class Register extends Component {
           <div>
             <label htmlFor="password">Password</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.password}
               error={errors.password}
               id="password"
@@ -101,7 +101,7 @@ class Register extends Component {
           <div>
             <label htmlFor="password2">Confirm Password</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.password2}
               error={errors.password2}
               id="password2"

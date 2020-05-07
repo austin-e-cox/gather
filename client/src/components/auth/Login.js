@@ -34,11 +34,11 @@ class Login extends Component {
     }
   }
 
-  onChange(event) {
+  handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
   }
 
-  onSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
 
     const userData = {
@@ -56,11 +56,11 @@ class Login extends Component {
       <div>
         <Link to="/">Back to Landing</Link>
         <p>Don't have an account?<Link to="/register">Register</Link></p>
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="email">Email</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.email}
               error={errors.email}
               id="email"
@@ -74,7 +74,7 @@ class Login extends Component {
           <div>
             <label htmlFor="password">Password</label>
             <input
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.password}
               error={errors.password}
               id="password"

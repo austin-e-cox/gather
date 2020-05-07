@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const path = require('path');
 
 // Pull in users API...
 const users = require('./routes/api/users');
@@ -17,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //Pull in our MongoDB URI and connect to DB...
-const db = require('./config/keys').mongoURI;
+const db = process.env.MONGODB_URI;
 
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('Succesfully Connected to DB...'))
@@ -25,6 +26,9 @@ mongoose.connect(db, { useNewUrlParser: true })
 
 // Passport Middleware...
 app.use(passport.initialize());
+
+// Heroku Middleware...
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 // Passport Config...
 require('./config/passport')(passport);
@@ -34,5 +38,9 @@ app.use('/api/users', users);
 
 // Set and listen to PORT...
 const port = process.env.PORT || 5000;
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(port, () => console.log(`Server running on port ${port}!`));
