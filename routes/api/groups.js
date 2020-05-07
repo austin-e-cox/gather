@@ -7,7 +7,7 @@ const Group = require("../../models/Group");
 // @route POST api/groups
 // @desc Emplace Group
 // @access Private
-router.get("/group/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   // validate user has access to that group
 
   // find the group with the id and return the necessary data

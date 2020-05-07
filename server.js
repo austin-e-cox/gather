@@ -40,7 +40,7 @@ require('./config/passport')(passport);
 
 // Routes
 app.use('/api/users', users);
-app.use('/api/userInfo', userInfo);
+app.use('/api/userinfo', userInfo);
 app.use('/api/groups', groups);
 
 // Set and listen to PORT...

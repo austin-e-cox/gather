@@ -1,3 +1,4 @@
+// UNUSED CURRENTLY, WE HAVE THE USER INFO POPULATED IN THE USER DATABASE FOR NOW :/
 // Pull in required deps...
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
