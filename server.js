@@ -7,8 +7,10 @@ const path = require('path');
 
 require('dotenv').config();
 
-// Pull in users API...
+// Pull in APIs...
 const users = require('./routes/api/users');
+const userInfo = require('./routes/api/userInfo');
+const groups =  require('./routes/api/groups');
 
 // Initialize app using express...
 const app = express();
@@ -38,6 +40,8 @@ require('./config/passport')(passport);
 
 // Routes
 app.use('/api/users', users);
+app.use('/api/userInfo', userInfo);
+app.use('/api/groups', groups);
 
 // Set and listen to PORT...
 const port = process.env.PORT || 5000;

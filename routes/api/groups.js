@@ -17,7 +17,9 @@ router.get("/group/:id", (req, res) => {
       } else {
        console.log(group);
        // activeUsers and chatLog 
-       return group
+       res.json(group);
       };
   });
 });
+
+module.exports = router;
