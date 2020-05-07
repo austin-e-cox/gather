@@ -53,8 +53,29 @@ class Register extends Component {
 
     return (
       <div>
-        <Link to="/">Back to Landing</Link>
-        <p>Already have an account?<Link to="/login">Login</Link></p>
+
+      <form action="#" className="bg-white rounded pb_form_v1">
+              <h2 className="mb-4 mt-0 text-center">Sign Up for Free</h2>
+              
+              <div className="form-group">
+                <input type="text" className="form-control pb_height-50 reverse" placeholder="Full name"/>
+              </div>
+              <div className="form-group">
+                <input type="text" className="form-control pb_height-50 reverse" placeholder="Email"/>
+              </div>
+              <div className="form-group">
+                <input type="password" className="form-control pb_height-50 reverse" placeholder="Password"/>
+              </div>
+              <div className="form-group">
+                <input type="password" className="form-control pb_height-50 reverse" placeholder="Confirm password"/>
+              </div>
+             
+              <div className="form-group">
+                <input type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Register"/>
+              </div>
+        </form>
+      
+    
         <form noValidate onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="name">Name</label>

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <>
-  {/* <h1>Navbar</h1> */}
-  <Link to="/">Landing</Link>
+
 
   <nav className="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
       <div className="container">
