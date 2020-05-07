@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
 
+require('dotenv').config();
+
 // Pull in users API...
 const users = require('./routes/api/users');
 
@@ -18,7 +20,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //Pull in our MongoDB URI and connect to DB...
-const db = process.env.MONGO_URI;
+const db = process.env.MONGODB_URI;
+console.log(db);
 
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('Succesfully Connected to DB...'))
