@@ -1,4 +1,5 @@
 // Pull in required deps...
+const { v4: uuidv4 } = require('uuid');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -19,6 +20,10 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  userId:{
+    type: String,
+    default: uuidv4()
   }
 });
 

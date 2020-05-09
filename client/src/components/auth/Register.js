@@ -52,69 +52,91 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div>
-        <Link to="/">Back to Landing</Link>
-        <p>Already have an account?<Link to="/login">Login</Link></p>
-        <form noValidate onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="name">Name</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.name}
-              error={errors.name}
-              id="name"
-              type="text"
-              className={classnames('', {
-                invalid: errors.name
-              })}
-            />
-            <span style={{color: 'red'}}>{errors.name}</span>
+      <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
+      <div className="container">
+        <div className="row align-items-center justify-content-center">
+          <div className="col-md-6">
+            <h2 className="heading mb-3">Gather together!</h2>
+            <div className="sub-heading">
+              <p className="mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim fuga repellendus impedit, repellat deleniti, ipsum nobis quia debitis perspiciatis beatae obcaecati dolorem, architecto fugit quas. Totam sapiente quia maiores quisquam?
+              </p>
+              <p className="mb-5"><a className="btn btn-success btn-lg pb_btn-pill" href="#" as={Link}><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Sign in</span></a></p>
+            </div>
           </div>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.email}
-              error={errors.email}
-              id="email"
-              type="email"
-              className={classnames('', {
-                invalid: errors.email
-              })}
-            />
-            <span style={{color: 'red'}}>{errors.email}</span>
+          <div className="col-md-1">
           </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.password}
-              error={errors.password}
-              id="password"
-              type="password"
-              className={classnames('', {
-                invalid: errors.password
-              })}
-            />
-            <span style={{color: 'red'}}>{errors.password}</span>
+          <div className="col-md-5 relative align-self-center">
+            <form noValidate className="bg-white rounded pb_form_v1" onSubmit={this.handleSubmit}>
+              <h2 className="mb-4 mt-0 text-center">Sign Up for Free</h2>
+              <div className="form-group">
+                <input
+                  type="text"
+                  placeholder="Full name"
+                  onChange={this.handleChange}
+                  value={this.state.name}
+                  error={errors.name}
+                  id="name"
+                  type="text"
+                  className={classnames('form-control pb_height-50 reverse', {
+                    invalid: errors.name
+                  })}
+                />
+                <span style={{color: 'red'}}>{errors.name}</span>
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="email"
+                  className={classnames('form-control pb_height-50 reverse', {
+                    invalid: errors.email
+                  })}
+                />
+                <span style={{color: 'red'}}>{errors.email}</span>
+              </div>
+              <div className="form-group">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                  className={classnames('form-control pb_height-50 reverse', {
+                    invalid: errors.password
+                  })}
+                />
+                <span style={{color: 'red'}}>{errors.password}</span>
+              </div>
+              <div className="form-group">
+                <input
+                  type="password"
+                  placeholder="Confirm password"
+                  onChange={this.handleChange}
+                  value={this.state.password2}
+                  error={errors.password2}
+                  id="password2"
+                  type="password"
+                  className={classnames('form-control pb_height-50 reverse', {
+                    invalid: errors.password2
+                  })}
+                />
+                <span style={{color: 'red'}}>{errors.password2}</span>
+              </div>
+              <div className="form-group">
+                <input type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill btn-shadow-blue" value="Register" />
+              </div>
+            </form>
           </div>
-          <div>
-            <label htmlFor="password2">Confirm Password</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.password2}
-              error={errors.password2}
-              id="password2"
-              type="password"
-              className={classnames('', {
-                invalid: errors.password2
-              })}
-            />
-            <span style={{color: 'red'}}>{errors.password2}</span>
           </div>
-          <button type="submit">Register</button>
-        </form>
       </div>
+      </section>
     )
   }
 }
