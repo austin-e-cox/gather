@@ -66,7 +66,7 @@ class Login extends Component {
             <div className="sub-heading">
               <p className="mb-4">
               Don't have an account?
-              <a className=" mb-4 " href="/register"><span className="pb_font-14 text-white pb_letter-spacing-1">Register one!</span></a>
+              <Link className=" mb-4 " to="/"><span className="pb_font-14 text-white pb_letter-spacing-1">Register one!</span></Link>
               </p>
               </div>
           </div>

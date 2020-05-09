@@ -61,7 +61,7 @@ class Register extends Component {
               <p className="mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim fuga repellendus impedit, repellat deleniti, ipsum nobis quia debitis perspiciatis beatae obcaecati dolorem, architecto fugit quas. Totam sapiente quia maiores quisquam?
               </p>
-              <p className="mb-5"><a className="btn btn-success btn-lg pb_btn-pill" href="#" as={Link}><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Sign in</span></a></p>
+              <p className="mb-5"><Link className="btn btn-success btn-lg pb_btn-pill" to="/login" ><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Sign in</span></Link></p>
             </div>
           </div>
           <div className="col-md-1">
