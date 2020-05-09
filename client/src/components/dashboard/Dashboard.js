@@ -12,7 +12,7 @@ class Dashboard extends Component {
     return (
       <div>
         <h4>
-          <b>Hey there,</b> {user.groups.map(item => <div>{item}</div>)}
+          <b>Hey there,</b> {user.name}
           <p className="flow-text grey-text text-darken-1">
             You are logged into a full-stack{" "}
             <span>MERN</span> app 👏
