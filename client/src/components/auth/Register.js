@@ -130,7 +130,8 @@ class Register extends Component {
                 <span style={{color: 'red'}}>{errors.password2}</span>
               </div>
               <div className="form-group">
-                <input type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill btn-shadow-blue" value="Register" />
+
+            <button type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue">Register</button>
               </div>
             </form>
           </div>
