@@ -53,6 +53,7 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
+<<<<<<< HEAD
       <>
 
 
@@ -81,6 +82,37 @@ class Login extends Component {
               <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
+=======
+      <div>
+
+<form action="#" className="bg-white rounded pb_form_v1">
+              <h2 className="mb-4 mt-0 text-center">Sign Up for Free</h2>
+              
+              <div className="form-group">
+                <input type="text" className="form-control pb_height-50 reverse" placeholder="Full name"/>
+              </div>
+              <div className="form-group">
+                <input type="text" className="form-control pb_height-50 reverse" placeholder="Email"/>
+              </div>
+              <div className="form-group">
+                <input type="password" className="form-control pb_height-50 reverse" placeholder="Password"/>
+              </div>
+              <div className="form-group">
+                <input type="password" className="form-control pb_height-50 reverse" placeholder="Confirm password"/>
+              </div>
+             
+              <div className="form-group">
+                <input type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Register"/>
+              </div>
+        </form>
+        
+        <Link to="/">Back to Landing</Link>
+        <p>Don't have an account?<Link to="/register">Register</Link></p>
+        <form noValidate onSubmit={this.handleSubmit}>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+>>>>>>> 411b0e333f075f59897862067b28aa7f98f0a636
               onChange={this.handleChange}
               value={this.state.email}
               error={errors.email}

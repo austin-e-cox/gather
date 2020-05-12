@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Signup = () => (
   <>
-    <Link to="/register">Register</Link>
-    <Link to="/login">Login</Link>
+   
 
     <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
