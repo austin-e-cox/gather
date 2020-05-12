@@ -12,7 +12,7 @@ class Dashboard extends Component {
     return (
       <div>
         <h4>
-          <b>Hey there,</b> {user.name.split(" ")[0]}
+          <b>Hey there,</b> {user.name}
           <p className="flow-text grey-text text-darken-1">
             You are logged into a full-stack{" "}
             <span>MERN</span> app 👏

@@ -24,6 +24,10 @@ const UserSchema = new Schema({
   userId:{
     type: String,
     default: uuidv4()
+  },
+  groups: {
+    type: [String],
+    required: true
   }
 });
 
