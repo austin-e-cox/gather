@@ -13,6 +13,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Chat from "./components/chat/Chat";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -41,6 +42,7 @@ function App() {
           <Navbar />
           <Route exact path="/" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/chat" component={Chat} />
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
