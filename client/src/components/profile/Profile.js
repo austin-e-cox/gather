@@ -33,7 +33,7 @@ function Profile() {
           <hr className="m-0" />
           <ul className="nav nav-tabs tabs-alt justify-content-center">
             <li className="nav-item">
-              <a className="nav-link py-4 active" href="#">Chats</a>
+              <a className="nav-link py-4 " href="#">Chats</a>
             </li>
             <li className="nav-item">
               <a className="nav-link py-4" href="#">Suggestions</a>
