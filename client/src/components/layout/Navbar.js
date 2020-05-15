@@ -14,7 +14,7 @@ const Navbar = () => (
           <ul className="navbar-nav ml-auto">
             <li className="nav-item"><Link className="nav-link" to="/">Contact</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/">About us</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/">Smth else</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/profile">Profile</Link></li>
         
             <li className="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0"><Link className="nav-link" to="/login" target="_blank"><span className="pb_rounded-4 px-4">Sign in</span></Link></li>
           </ul>
