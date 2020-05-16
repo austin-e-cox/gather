@@ -1,5 +1,5 @@
 
-
+import "./About.css"
 
 
 
@@ -21,8 +21,6 @@
                       people and it can become challenging to find time to have meaningful and fun interactions with like minded people.
                       Gather is here to help with that! Gather is a great platform that brings people who share common interests together, allowing 
                       users to connect on a level that is not only fun but also encourages social growth. 
-                      Gather is here to help people connect on a meaningful human level and to remind 
-                      us all that at the end of the day, we are all human and we have more in common than we think!
                       Connect with users around the country to come together and have in depth discussions about subjects that you care about. 
                       Chat with users hundreds of miles away for some simple cooking tips and tricks! Have a conversation with someone in an entirely different
                       place that you would never have thought to have common ground with.
