@@ -1,0 +1,134 @@
+body {
+    font-family: "Montserrat", Arial, sans-serif; }
+  
+    /* navbar */
+    .pb_navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      font-family: "Montserrat", Arial, sans-serif; }
+      
+     
+        /* button sign in */
+      .pb_navbar .navbar-toggler {
+        border: none;
+        color: white;
+        border-color: white;
+        cursor: pointer;
+        padding-right: 0; }
+    
+    
+        .pb_navbar .navbar-toggler i {
+          font-size: 30px; }
+    
+      
+    
+      .pb_navbar ul > li.cta-btn > a > span {
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.5); }
+
+/* navbar ends */
+
+
+
+
+  .pb_cover > .container{
+    position: relative; }
+    .pb_cover > .container > .row {
+      height: 100vh; }
+     
+  
+  .pb_cover .heading{
+    font-size: 62px;
+    color: white;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 0px; }
+
+  
+  .pb_cover .sub-heading{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    float: left; }
+
+
+  .pb_cover.text-center .sub-heading{
+    margin: 0 auto;
+    float: none; }
+  
+
+  .pb_cover.text-left .sub-heading{
+    float: left; }
+
+
+.cover-bg-indigo {
+  position: relative; }
+
+.cover-bg-opacity:before {
+  opacity: 1; }
+
+.cover-bg-indigo:before {
+  background: #4e3188; }
+
+.pb_gradient_v1:before {
+  background: #665fee;
+  background: linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+  
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+}
+
+
+
+.pb_form_v1 {
+  padding: 50px;
+  box-shadow: 1px 11px 68px -20px rgba(0, 0, 0, 0.75); }
+
+ 
+input, select, textarea {
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7); }
+
+
+.form-control.reverse {
+  background: #f2f2f2;
+  transition: .3s all ease;
+  border-color: #f2f2f2; }
+  .form-control.reverse:focus, .form-control.reverse:active {
+    background: none;
+ }
+
+
+.pb_btn-pill {
+  border-radius: 50px;
+  padding-left: 40px;
+  padding-right: 40px; }
+
+
+
+input, textarea, p {
+  font-weight: 300; }
+
+    /* media queries  */
+
+    @media (max-width: 767px) {
+      .pb_cover > .container > .row {
+        height: inherit;
+        padding: 4em 0; } 
+
+        .pb_cover .heading{
+          font-size: 42px; }
+
+      }
+
+
+      @media (max-width: 991px) {
+        .pb_form_v1 {
+          padding: 30px; } }
