@@ -13,7 +13,6 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-import Chat from "./components/chat/Chat";
 import Profile from "./components/profile/Profile";
 
 // Check for token to keep user logged in
@@ -43,7 +42,6 @@ function App() {
           <Navbar />
           <Route exact path="/" component={Register} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/chat" component={Chat} />
           <Route exact path="/profile" component={Profile} />
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
