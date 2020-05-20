@@ -1,8 +1,15 @@
 import React from "react";
+import openSocket from 'socket.io-client';
 import "./Chat.css"
+import UserPanel from "../UserPanel"
+import ChatWindow from "../ChatWindow"
 
 function Chat() {
   return (
+    <div className="App">
+        <UserPanel activeUsers={this.state.activeUsers}/>
+        <ChatWindow groupName={this.props.groupName} userName={this.props.userName} connected={connected} socket={socket} messageLog={this.state.messageLog} />
+      </div>
 
 <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
