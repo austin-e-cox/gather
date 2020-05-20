@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Signup = () => {
+const Interest = () => {
   return(
   <>
    
@@ -64,4 +64,4 @@ const Signup = () => {
   )
 };
 
-export default Signup;
+export default Interest;
