@@ -1,0 +1,49 @@
+.mesgs{
+	float: left;
+	padding: 30px 15px 0 25px;
+	width:70%;
+}
+
+.msg_history {
+	height: 516px;
+	overflow-y: auto;
+}
+
+.incoming_msg_img {
+	display: inline-block;
+	width: 6%;
+}
+
+.incoming_msg_img img {
+	width: 100%;
+}
+
+.received_msg {
+	display: inline-block;
+	padding: 0 0 0 10px;
+	vertical-align: top;
+	width: 92%;
+}
+
+.received_withd_msg p {
+	background: #ebebeb none repeat scroll 0 0;
+	border-radius: 0 15px 15px 15px;
+	color: #646464;
+	font-size: 14px;
+	margin: 0;
+	padding: 5px 10px 5px 12px;
+	width: 100%;
+}
+
+.time_date {
+	color: #ebebeb;
+	display: block;
+	font-size: 12px;
+	margin: 8px 0 0;
+}
+
+
+
+.received_withd_msg {
+	width: 57%;
+}
