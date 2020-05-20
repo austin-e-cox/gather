@@ -3,7 +3,7 @@ import "./Chat.css"
 
 function Chat() {
   return (
-   
+
 <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
       <div className="row align-items-center justify-content-center">
@@ -142,7 +142,7 @@ function Chat() {
 
       </div>
     </section>
-      
+
   );
 }
 

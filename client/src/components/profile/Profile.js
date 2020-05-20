@@ -1,14 +1,14 @@
 import React from "react";
-import "./Profile.css"
+import "./Profile.css";
 
 function Profile() {
   return (
-   
+
 <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
       <div className="row align-items-center justify-content-center">
       <div className="col-12">
-      
+
       <div className="container bootstrap-snippet header-container">
         <div className="bg-white">
           <div className="container py-5">
@@ -33,27 +33,27 @@ function Profile() {
           <hr className="m-0" />
           <ul className="nav nav-tabs tabs-alt justify-content-center">
             <li className="nav-item">
-              <a className="nav-link py-4 " href="#">Chats</a>
+              <a className="nav-link py-4" href="/">Chats</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link py-4" href="#">Suggestions</a>
+              <a className="nav-link py-4" href="/">Suggestions</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link py-4" href="#">Followers</a>
+              <a className="nav-link py-4" href="/">Followers</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link py-4" href="#">Following</a>
+              <a className="nav-link py-4" href="/">Following</a>
             </li>
           </ul>
         </div>
       </div>
-      
+
         </div>
         </div>
       </div>
 
     </section>
-      
+
   );
 }
 
