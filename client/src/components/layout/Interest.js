@@ -12,7 +12,7 @@ const Signup = () => (
             <h2 className="heading mb-3">Almost There!</h2>
             <div className="sub-heading">
               <p className="mb-4">
-                 "A little blurb about our suggestions"Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                 Thank you for taking the time to fill out your interests. Based on your selections, here are some suggestions to get started!
               </p>
             </div>
           </div>
