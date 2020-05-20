@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Signup = () => (
+const Signup = () => {
+  return(
   <>
    
 
@@ -60,6 +61,7 @@ const Signup = () => (
 
 
   </>
-);
+  )
+};
 
 export default Signup;
