@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './utils/app.css';
+import './about.css';
 
 const About = () => {
   return(
