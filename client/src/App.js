@@ -5,7 +5,7 @@ import store from './store';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import Chat from "./components/chat/Chat"
+import Chat from "./components/chat/Chat";
 
 import './App.css';
 
