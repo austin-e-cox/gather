@@ -1,4 +1,4 @@
-import React from "../../../node_modules/react";
+import React from "react";
 import openSocket from 'socket.io-client';
 import "./style.css"
 import UserPanel from "../UserPanel"

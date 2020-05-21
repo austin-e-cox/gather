@@ -1,4 +1,4 @@
-import React, { useState } from "../../../node_modules/react";
+import React, { useState } from "react";
 import "./style.css"
 
 const TYPING_TIMER_LENGTH = 800; // ms

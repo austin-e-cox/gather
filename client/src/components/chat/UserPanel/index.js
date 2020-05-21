@@ -1,4 +1,4 @@
-import React from "../../../node_modules/react";
+import React from "react";
 import "./style.css"
 
 
@@ -7,7 +7,7 @@ function UserPanel({activeUsers}) {
   return (
     <div>
     <h1>Active users:</h1>
-    {activeUsers.length===0 ? 
+    {activeUsers.length===0 ?
       <h3>No active users currently</h3>
       :
       <ul className="list-unstyled">
