@@ -1,4 +1,4 @@
-import React from "../../../node_modules/react";
+import React from "react";
 import "./style.css"
 import ChatLog from "../ChatLog"
 import InputArea from "../InputArea"
