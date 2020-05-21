@@ -53,36 +53,6 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-<<<<<<< HEAD
-      <>
-
-
-
-<section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
-      <div className="container">
-        <div className="row align-items-center justify-content-center">
-          <div className="col-md-6">
-            <h2 className="heading mb-3">Glad to have you back!</h2>
-            
-            <div className="sub-heading">
-              <p className="mb-4">
-              Don't have an account?
-              <Link className=" mb-4 " to="/"><span className="pb_font-14 text-white pb_letter-spacing-1">Register one!</span></Link>
-              </p>
-              </div>
-          </div>
-          <div className="col-md-1">
-          </div>
-
-          <div className="col-md-5 relative align-self-center">
-
-            <form  className="bg-white rounded pb_form_v1" noValidate onSubmit={this.handleSubmit}>
-              <h2 className="mb-4 mt-0 text-center">Sign In</h2>
-             
-              <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-=======
       <div>
 
 <form action="#" className="bg-white rounded pb_form_v1">
@@ -112,7 +82,6 @@ class Login extends Component {
           <div>
             <label htmlFor="email">Email</label>
             <input
->>>>>>> 411b0e333f075f59897862067b28aa7f98f0a636
               onChange={this.handleChange}
               value={this.state.email}
               error={errors.email}
@@ -147,15 +116,14 @@ class Login extends Component {
             </form>
 
           </div>
-        </div>
-      </div>
-    </section>
+       
+ 
 
 
 
 
   
-      </>
+     
     )
   }
 }
