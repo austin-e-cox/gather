@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Interest.css';
+
 const Interest = () => {
   return(
   <>
@@ -24,27 +23,27 @@ const Interest = () => {
             <form action="#" className="bg-white rounded pb_form_v1">
               <h2 className="mb-4 mt-0 text-left">Select your Interests</h2>
               <div className="checkbox">
-                <label><input type="checkbox" value="">Health/Fitness></input></label>
+                <label><input type="checkbox" value="Health"></input></label>
               </div>
               
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Gaming></input></label>
+              <div className="checkbox">
+                <label><input type="checkbox" value="Gaming"></input></label>
               </div>
               
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Food</input></label>
+              <div className="checkbox">
+                <label><input type="checkbox" value="Food"></input></label>
               </div>
 
               <div className="checkbox">
-                <label><input type="checkbox" value="">Music</input></label>
+                <label><input type="checkbox" value="Music"></input></label>
               </div>
               
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Movies</input></label>
+              <div className="checkbox">
+                <label><input type="checkbox" value="Movies"></input></label>
               </div>
               
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Crafts</input></label>
+              <div className="checkbox">
+                <label><input type="checkbox" value="Crafts"></input></label>
               </div>
             
              
