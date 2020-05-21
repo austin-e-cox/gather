@@ -13,7 +13,7 @@ const Interest = () => {
             <h2 className="heading mb-3">Almost There!</h2>
             <div className="sub-heading">
               <p className="mb-4">
-                 Thank you for taking the time to fill out your interests. Based on your selections, here are some suggestions to get started!
+                Please select the following options that you would be interested in! 
               </p>
             </div>
           </div>
