@@ -67,12 +67,12 @@ class Chat extends React.Component {
     //console.log("RM1.5",[...ml.slice(0,ml.length-1)])
     //console.log("RM2",this.state.messageLog)
   }
-  
+
   componentDidMount() {
     // socket.on('timer', (data) => {
     //   console.log(data)
-    //   this.setState({ 
-    //     timestamp: data 
+    //   this.setState({
+    //     timestamp: data
     //   });
     // })
 
@@ -100,7 +100,7 @@ class Chat extends React.Component {
       // ALSO NEED TO set userNames, log history
       // this.setState({...this.state, activeUsers: data.activeUsers messageLog: data.messageLog})
     });
-  
+
     // Whenever the server emits 'new message', update the chat body
     socket.on('new message', (data) => {
       // should be passing object with userName and message
@@ -108,7 +108,7 @@ class Chat extends React.Component {
       this.removeChatTyping()
       this.setState({...this.state, messageLog: [...this.state.messageLog, {userName: data.userName, message: data.message}]});
     });
-  
+
     // Whenever the server emits 'user joined', log it in the chat body and update the user list
     socket.on('user joined', (data) => {
       data = JSON.parse(data);
@@ -117,7 +117,7 @@ class Chat extends React.Component {
       this.removeChatTyping()
       this.setState({...this.state, activeUsers: [...this.state.activeUsers, data.userName], messageLog: [...this.state.messageLog, {userName: "", message: message}]});
     });
-  
+
     // Whenever the server emits 'user left', log it in the chat body
     socket.on('user left', (data) => {
       // TO DO: data should say who has left, and we should update the user list
@@ -128,22 +128,22 @@ class Chat extends React.Component {
       this.removeChatTyping()
       this.setState({...this.state, activeUsers: users, messageLog: [...this.state.messageLog, {userName: "", message: message}]})
     });
-  
+
     // Whenever the server emits 'typing', show the typing message
     socket.on('typing', (userName) => {
       this.addChatTyping(userName);
     });
-  
+
     // Whenever the server emits 'stop typing', kill the typing message
     socket.on('stop typing', (userName) => {
       this.removeChatTyping(userName);
     });
-  
+
     socket.on('disconnect', () => {
       let message = 'you have been disconnected';
       this.setState({...this.state, messageLog: [...this.state.messageLog, {userName: "", message: message}]})
     });
-  
+
     socket.on('reconnect', (data) => {
       // pull last N messages and populate chat log (cannot just wait for new messages since we may have missed some)
       let message = 'you have been reconnected';
@@ -153,7 +153,7 @@ class Chat extends React.Component {
         socket.emit('add user', this.props.userName);
       }
     });
-  
+
     socket.on('reconnect_error', () => {
       let message = 'attempt to reconnect has failed';
       reconnect_attempt += 1;
