@@ -50,7 +50,13 @@ function InputArea({userName, socket }) {
     }
   }
 
-  const handleSubmit = handleKeyPress;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendMessage(userName, message, socket);
+    typing = false;
+    socket.emit("stop typing");
+    setMessage("")
+  };
 
   const handleMessageChange = (e) => {
     //console.log("CHANGE");
