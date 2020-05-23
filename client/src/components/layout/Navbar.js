@@ -23,16 +23,18 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="collapsingNavbar" >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><Link className="nav-link" to="/">Contact</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/about">About us</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/profile">Profile</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
               {
                 this.props.auth.isAuthenticated === true
                 ?
-                  <li className="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0" onClick={this.onLogoutClick}>
-                    <Link className="nav-link" to="/login">
-                      <span className="pb_rounded-4 px-4">Logout</span>
-                    </Link>
-                  </li>
+                  <>
+                    <li className="nav-item"><Link className="nav-link" to="/profile">Profile</Link></li>
+                    <li className="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0" onClick={this.onLogoutClick}>
+                      <Link className="nav-link" to="/login">
+                        <span className="pb_rounded-4 px-4">Logout</span>
+                      </Link>
+                    </li>
+                  </>
                 :
                   <li className="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0">
                     <Link className="nav-link" to="/login">

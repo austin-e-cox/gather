@@ -21,11 +21,10 @@ const chatLog = new Schema({
 
 // Create Group Schema...
 const GroupSchema = new Schema({
-  groupId : {
+  groupName : {
     type: String,
-    default: uuidv4()
+    required: true
   },
-  
   activeUsers : {
     type: [String],
     required: true

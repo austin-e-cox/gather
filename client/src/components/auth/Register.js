@@ -53,90 +53,89 @@ class Register extends Component {
 
     return (
       <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
-      <div className="container">
-        <div className="row align-items-center justify-content-center">
-          <div className="col-md-6">
-            <h2 className="heading mb-3">Gather together!</h2>
-            <div className="sub-heading">
-              <p className="mb-4">
-                Welcome to Gather! Please take a few moments to complete the sign-up process. We promise, its quick and easy. (Its quite a bit of fun too!)
-              </p>
-              <p className="mb-5"><Link className="btn btn-success btn-lg pb_btn-pill" to="/login" ><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Sign in</span></Link></p>
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-md-6">
+              <h2 className="heading mb-3">Gather together!</h2>
+              <div className="sub-heading">
+                <p className="mb-4">
+                  Random chatrooms and back-alley handshakes. Whispers in the night. What more could you ask for?
+                </p>
+                <p className="mb-5"><Link className="btn btn-success btn-lg pb_btn-pill" to="/login" ><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Sign in</span></Link></p>
+              </div>
+            </div>
+            <div className="col-md-1">
+            </div>
+            <div className="col-md-5 relative align-self-center">
+              <form noValidate className="bg-white rounded pb_form_v1" onSubmit={this.handleSubmit}>
+                <h2 className="mb-4 mt-0 text-center">Sign Up for Free</h2>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    onChange={this.handleChange}
+                    value={this.state.name}
+                    error={errors.name}
+                    id="name"
+                    type="text"
+                    className={classnames('form-control pb_height-50 reverse', {
+                      invalid: errors.name
+                    })}
+                  />
+                  <span style={{color: 'red'}}>{errors.name}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    onChange={this.handleChange}
+                    value={this.state.email}
+                    error={errors.email}
+                    id="email"
+                    type="email"
+                    className={classnames('form-control pb_height-50 reverse', {
+                      invalid: errors.email
+                    })}
+                  />
+                  <span style={{color: 'red'}}>{errors.email}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}
+                    value={this.state.password}
+                    error={errors.password}
+                    id="password"
+                    type="password"
+                    className={classnames('form-control pb_height-50 reverse', {
+                      invalid: errors.password
+                    })}
+                  />
+                  <span style={{color: 'red'}}>{errors.password}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    type="password"
+                    placeholder="Confirm password"
+                    onChange={this.handleChange}
+                    value={this.state.password2}
+                    error={errors.password2}
+                    id="password2"
+                    type="password"
+                    className={classnames('form-control pb_height-50 reverse', {
+                      invalid: errors.password2
+                    })}
+                  />
+                  <span style={{color: 'red'}}>{errors.password2}</span>
+                </div>
+                <div className="form-group">
+                  <button type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue">Register</button>
+                </div>
+              </form>
             </div>
           </div>
-          <div className="col-md-1">
-          </div>
-          <div className="col-md-5 relative align-self-center">
-            <form noValidate className="bg-white rounded pb_form_v1" onSubmit={this.handleSubmit}>
-              <h2 className="mb-4 mt-0 text-center">Sign Up for Free</h2>
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Full name"
-                  onChange={this.handleChange}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
-                  type="text"
-                  className={classnames('form-control pb_height-50 reverse', {
-                    invalid: errors.name
-                  })}
-                />
-                <span style={{color: 'red'}}>{errors.name}</span>
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Email"
-                  onChange={this.handleChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames('form-control pb_height-50 reverse', {
-                    invalid: errors.email
-                  })}
-                />
-                <span style={{color: 'red'}}>{errors.email}</span>
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames('form-control pb_height-50 reverse', {
-                    invalid: errors.password
-                  })}
-                />
-                <span style={{color: 'red'}}>{errors.password}</span>
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  placeholder="Confirm password"
-                  onChange={this.handleChange}
-                  value={this.state.password2}
-                  error={errors.password2}
-                  id="password2"
-                  type="password"
-                  className={classnames('form-control pb_height-50 reverse', {
-                    invalid: errors.password2
-                  })}
-                />
-                <span style={{color: 'red'}}>{errors.password2}</span>
-              </div>
-              <div className="form-group">
-
-            <button type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue">Register</button>
-              </div>
-            </form>
-          </div>
-          </div>
-      </div>
+        </div>
       </section>
     )
   }
