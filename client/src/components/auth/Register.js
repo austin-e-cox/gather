@@ -59,7 +59,7 @@ class Register extends Component {
               <h2 className="heading mb-3">Gather together!</h2>
               <div className="sub-heading">
                 <p className="mb-4">
-                  Random chatrooms and back-alley handshakes. Whispers in the night. What more could you as for?
+                  Random chatrooms and back-alley handshakes. Whispers in the night. What more could you ask for?
                 </p>
                 <p className="mb-5"><Link className="btn btn-success btn-lg pb_btn-pill" to="/login" ><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Sign in</span></Link></p>
               </div>
