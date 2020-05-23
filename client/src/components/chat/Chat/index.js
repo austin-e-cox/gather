@@ -1,13 +1,10 @@
-import React from "../../../node_modules/react";
+import React from "react";
 import openSocket from 'socket.io-client';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-
 import "./style.css"
 import UserPanel from "../UserPanel"
 import ChatWindow from "../ChatWindow"
 
-const socket = openSocket('http://localhost:8001');
+const socket = openSocket('http://localhost:8000');
 
 let connected = false;
 let reconnect_attempt = 0;
@@ -23,13 +20,6 @@ class Chat extends React.Component {
       activeUsers: [this.props.userName],
       messageLog: [],
     };
-
-    // if (!this.props.userName){
-    //   this.props.userName="_unset_user"
-    // }
-    // if (!this.props.groupName){
-    //   this.props.groupName="_unset_group"
-    // }
   }
 
   getParticipantsMessage() {
@@ -173,24 +163,13 @@ class Chat extends React.Component {
   //userInput
 
   render() {
-    const { user } = this.props.auth;
     return (
       <div className="App">
         <UserPanel activeUsers={this.state.activeUsers}/>
-        <ChatWindow groupName={this.props.groupName} userName={user.name} connected={connected} socket={socket} messageLog={this.state.messageLog} />
+        <ChatWindow groupName={this.props.groupName} userName={this.props.userName} connected={connected} socket={socket} messageLog={this.state.messageLog} />
       </div>
     );
   }
 }
 
-Chat.propTypes = {
-  auth: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(
-  mapStateToProps
-)(Chat);
+export default Chat;

@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Register from '../auth/Register';
 
 const Landing = () => (
   <>
+<<<<<<< HEAD
     <Link to="/register">Register</Link>
     <Link to="/login">Login</Link>
+=======
+   
+>>>>>>> e0c814cee6d176e060e334e2bf705f1c7311d8a8
 
     <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
@@ -22,6 +27,7 @@ const Landing = () => (
           </div>
           <div className="col-md-5 relative align-self-center">
 
+<<<<<<< HEAD
             <form action="#" className="bg-white rounded pb_form_v1">
               <h2 className="mb-4 mt-0 text-center">Sign Up for Free</h2>
               <div className="form-group">
@@ -38,6 +44,9 @@ const Landing = () => (
                 <input type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Register"/>
               </div>
             </form>
+=======
+        <Register/>
+>>>>>>> e0c814cee6d176e060e334e2bf705f1c7311d8a8
 
           </div>
         </div>

@@ -44,7 +44,7 @@ app.use('/api/userinfo', userInfo);
 app.use('/api/groups', groups);
 
 // Set and listen to PORT...
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
