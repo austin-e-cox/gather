@@ -24,9 +24,6 @@ class Dashboard extends Component {
                   You are logged into a full-stack{" "}
                   <span>MERN</span> app 👏
                 </p>
-                <button className="btn btn-success btn-lg pb_btn-pill " onClick={this.onLogoutClick}>
-                  Logout
-                </button>
               </div>
             </div>
             <Link to="/chat">
