@@ -38,7 +38,6 @@ class Dashboard extends Component {
                 </form>
               </div>
             </Link>
-
             <Link to="/chat" style={{textDecoration: 'none', listStyle: 'none'}}>
               <div className="col-sm-3  align-self-center" style={{minWidth: '300px'}}>
                 <form action="#" className="bg-light rounded pb_form_v1">
