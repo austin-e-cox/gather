@@ -3,8 +3,6 @@ import React from 'react';
 const About = () => {
   return(
   <>
-   
-
     <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
         <div className="row align-items-center justify-content-center">
@@ -22,17 +20,12 @@ const About = () => {
               <p>
               Welcome to Gather! A site that connects us to one another through technology and creativity. The importance of social interaction is something that has helped shape who we are as people for as long as we have been around. Year after year, the way we forge relationships with others changes with our lives. We get busy, it becomes difficult to go out and meet people and it can become challenging to find time to have meaningful and fun interactions with like minded people. Gather is here to help with that! Gather is a great platform that brings people who share common interests together, allowing users to connect on a level that is not only fun but also encourages social growth. Connect with users around the country to come together and have in depth discussions about subjects that you care about. Chat with users hundreds of miles away for some simple cooking tips and tricks! Have a conversation with someone in an entirely different place that you would never have thought to have common ground with. Whether you want to share ideas, hobbies, or just want to find people to have a good laugh with, Gather is here to help.
               </p>
-             
-            
             </form>
 
           </div>
         </div>
       </div>
     </section>
-
-
-
   </>
   )
 };
