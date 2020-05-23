@@ -1,7 +1,7 @@
 .type_msg {
 	border-top: 1px solid #c4c4c4;
 	position: relative;
-	background-color: red;
+	background-color:#c4c4c4 ;
 }
 
 .input_msg_write input {
@@ -30,8 +30,4 @@
 	right: 0;
 	top: 11px;
 	width: 33px;
-}
-
-body{
-	color:red;
 }
