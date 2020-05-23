@@ -62,11 +62,11 @@ class Login extends Component {
         <div className="row align-items-center justify-content-center">
           <div className="col-md-6">
             <h2 className="heading mb-3">Glad to have you back!</h2>
-            
+
             <div className="sub-heading">
               <p className="mb-4">
               Don't have an account?
-              <Link className=" mb-4 " to="/"><span className="pb_font-14 text-white pb_letter-spacing-1">Register one!</span></Link>
+              <p className="mb-5"><Link className="btn btn-success btn-lg pb_btn-pill" to="/" ><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Register</span></Link></p>
               </p>
               </div>
           </div>
@@ -77,7 +77,7 @@ class Login extends Component {
 
             <form  className="bg-white rounded pb_form_v1" noValidate onSubmit={this.handleSubmit}>
               <h2 className="mb-4 mt-0 text-center">Sign In</h2>
-             
+
               <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
@@ -106,8 +106,8 @@ class Login extends Component {
             />
             <span style={{color: 'red'}}>{errors.password}{errors.passwordincorrect}</span>
           </div>
-               
-             
+
+
               <div className="form-group">
               <button type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue">Login</button>
 
@@ -122,7 +122,7 @@ class Login extends Component {
 
 
 
-  
+
       </>
     )
   }

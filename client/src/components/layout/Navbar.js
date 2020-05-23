@@ -23,7 +23,7 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="collapsingNavbar" >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><Link className="nav-link" to="/">Contact</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/about">About us</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
               {
                 this.props.auth.isAuthenticated === true
                 ?
