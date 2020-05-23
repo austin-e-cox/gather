@@ -4,12 +4,7 @@ import Register from '../auth/Register';
 
 const Landing = () => (
   <>
-<<<<<<< HEAD
-    <Link to="/register">Register</Link>
-    <Link to="/login">Login</Link>
-=======
    
->>>>>>> e0c814cee6d176e060e334e2bf705f1c7311d8a8
 
     <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
@@ -18,7 +13,10 @@ const Landing = () => (
             <h2 className="heading mb-3">Gather together!</h2>
             <div className="sub-heading">
               <p className="mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim fuga repellendus impedit, repellat deleniti, ipsum nobis quia debitis perspiciatis beatae obcaecati dolorem, architecto fugit quas. Totam sapiente quia maiores quisquam?
+              Welcome to Gather. A social exprience that makes it easy and fun for everyone to connect on multiple levels. 
+              No matter what your interests are or where you are from, we want to make it easy for you to find and interact with other people 
+              who share common or maybe sometimes not so common, interests. Gather is a place to not only explore what makes us all different, 
+              but to discover new and exciting ideas that can bring us together. 
               </p>
               <p className="mb-5"><a className="btn btn-success btn-lg pb_btn-pill " href="#"><span className="pb_font-14 text-uppercase pb_letter-spacing-1">Sign in</span></a></p>
             </div>
@@ -27,26 +25,7 @@ const Landing = () => (
           </div>
           <div className="col-md-5 relative align-self-center">
 
-<<<<<<< HEAD
-            <form action="#" className="bg-white rounded pb_form_v1">
-              <h2 className="mb-4 mt-0 text-center">Sign Up for Free</h2>
-              <div className="form-group">
-                <input type="text" className="form-control pb_height-50 reverse" placeholder="Full name"/>
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control pb_height-50 reverse" placeholder="Email"/>
-              </div>
-              <div className="form-group">
-                <input type="password" className="form-control pb_height-50 reverse" placeholder="Password"/>
-              </div>
-             
-              <div className="form-group">
-                <input type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Register"/>
-              </div>
-            </form>
-=======
         <Register/>
->>>>>>> e0c814cee6d176e060e334e2bf705f1c7311d8a8
 
           </div>
         </div>
