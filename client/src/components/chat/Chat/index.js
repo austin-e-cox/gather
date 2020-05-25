@@ -165,8 +165,36 @@ class Chat extends React.Component {
   render() {
     return (
       <div className="App">
-        <UserPanel activeUsers={this.state.activeUsers}/>
-        <ChatWindow groupName={this.props.groupName} userName={this.props.userName} connected={connected} socket={socket} messageLog={this.state.messageLog} />
+        <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
+          <div className="container">
+          <div className="row align-items-center justify-content-center">
+          <h2 className="heading mb-3">You are in CHAT_NAME</h2>
+          <div className="col-12">
+          <div className="messaging">
+          <div className="inbox_msg">
+          <div className="inbox_people">
+            <div className="headind_srch">
+            <div className="recent_heading">
+            <h4>UserName</h4>
+            </div>
+            <div className="srch_bar">
+            <div className="stylish-input-group">
+            <input type="text" className="search-bar" placeholder="Search" />
+            </div>
+            </div>
+
+                <UserPanel activeUsers={this.state.activeUsers}/>
+                
+          
+          </div>
+          </div>
+          <ChatWindow groupName={this.props.groupName} userName={this.props.userName} connected={connected} socket={socket} messageLog={this.state.messageLog} />
+           </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </section>
       </div>
     );
   }

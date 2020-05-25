@@ -6,10 +6,10 @@ function UserPanel({activeUsers}) {
   //console.log(activeUsers)
   return (
     <div>
-
+    
     <div className="inbox_chat scroll">
         <div className="chat_list">
-
+        <div className="chat_people">
         <div className="chat_ib">
                    
           {activeUsers.map((name,i) => (
@@ -37,7 +37,7 @@ function UserPanel({activeUsers}) {
                   }
                 </ul>
               } */}
-
+              </div>
               </div>
         </div>  
     </div>
