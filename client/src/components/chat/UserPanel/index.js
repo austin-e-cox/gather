@@ -6,42 +6,45 @@ function UserPanel({activeUsers}) {
   //console.log(activeUsers)
   return (
     <div>
-    
-    <div className="inbox_chat scroll">
-        <div className="chat_list">
-        <div className="chat_people">
-        <div className="chat_ib">
-                   
-          {activeUsers.map((name,i) => (
-                    <h5>{name}</h5>
-                    ))
-                  } 
-          
-          
-        {/* <h5>Chuck Norris <span className="chat_date">May 12</span></h5>
-                    <p>This is a phrase about Mr.Norris</p> */}
-              
-
-          
 
 
+<div className="inbox_people">
 
-              {/* <h1>Active users:</h1>
-              {activeUsers.length===0 ?
-                <h3>No active users currently</h3>
-                :
-                <ul className="list-unstyled">
-                  {activeUsers.map((name,i) => (
-                    <li key={name+"__key__"+i} >{name}</li>
-                    ))
-                  }
-                </ul>
-              } */}
+<div className="headind_srch">
+              <div className="recent_heading">
+                <h4>UserName</h4>
               </div>
+              <div className="srch_bar">
+                <div className="stylish-input-group">
+                  <input type="text" className="search-bar" placeholder="Search" />
+                </div>
               </div>
-        </div>  
-    </div>
+ </div>
+
+<div className="inbox_chat scroll">
+      <div className="chat_list">
+                      <div className="chat_people">
+                          <div className="chat_img"> 
+                          <img src="https://www.gstatic.com/tv/thumb/persons/73040/73040_v9_ba.jpg" alt="chuck" />
+                          </div>
+                            <div className="chat_ib">
+                                  {activeUsers.map((name,i) => (
+                                    <h5>Your name is {name}</h5>
+                                    ))
+                                  } 
+                            
+                            </div>
+                      </div>
+      </div>
+</div>
+
+</div>
     
+
+
+
+
+       
     </div>
   );
 }
