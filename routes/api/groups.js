@@ -57,7 +57,7 @@ router.get("/", (req, res) => {
     if (!groups) {
       return res.status(400).json({ group: "No groups found in database" });
     } else {
-      console.log(groups);
+      //console.log("available groups",groups);
       res.json(groups);
     };
   });
