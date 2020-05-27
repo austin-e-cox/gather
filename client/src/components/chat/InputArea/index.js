@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import "./style.css"
 
+// init vars
 const TYPING_TIMER_LENGTH = 800; // ms
 let typing = false;
 let lastTypingTime;
 
+// function to send message to server
 const sendMessage = (userName, message, socket) => {
-  // if there is a non-empty message // and a socket connection
-  if (message)
-    // tell server to execute 'new message' and send along one parameter
+  // if there is a non-empty message
+  if (message){
+    // tell server we have a 'new message'
     console.log("new message", userName, message)
     socket.emit('new message', JSON.stringify({
       userName: userName,
       message: message
-    }));
+      })
+    );
+  }
 }
 
 // Updates the typing event
@@ -36,12 +40,11 @@ const updateTypingStatus = (socket) => {
   }, TYPING_TIMER_LENGTH);
 }
 
-
+// component
 function InputArea({userName, socket }) {
   const [message, setMessage] = useState('');
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      //console.log("SUBMIT")
       e.preventDefault();
       sendMessage(userName, message, socket);
       typing = false;
@@ -51,6 +54,7 @@ function InputArea({userName, socket }) {
   }
 
   const handleSubmit = (e) => {
+    //console.log("SUBMIT");
     e.preventDefault();
     sendMessage(userName, message, socket);
     typing = false;
@@ -67,11 +71,11 @@ function InputArea({userName, socket }) {
 
   return (
     <div className="type_msg">
-              <div className="input_msg_write">
-                <input type="text" className="write_msg" placeholder="Type a message" value={message} onChange={handleMessageChange} onSubmit={handleSubmit} onKeyPress={handleKeyPress}/>
-                <button className="msg_send_btn" type="button"><i className="fa fa-paper-plane" aria-hidden="true" /></button>
-              </div>
-            </div>
+      <div className="input_msg_write">
+        <input type="text" className="write_msg" placeholder="Type a message" value={message} onChange={handleMessageChange} onKeyPress={handleKeyPress}/>
+        <button className="msg_send_btn" type="button"><i className="fa fa-paper-plane" aria-hidden="true" onSubmit={handleSubmit} /></button>
+      </div>
+    </div>
   );
 }
 

@@ -4,33 +4,36 @@ const router = express.Router();
 // Load User model
 const Group = require("../../models/Group");
 
-// @route POST api/groups
-// @desc Emplace Group
+// @route GET api/groups
+// @desc Get Group
 // @access Private
 router.get("/:id", (req, res) => {
-  // validate user has access to that group
+  // validate user has access to that group?
 
   // find the group with the id and return the necessary data
-  Group.findOne({ groupName: req.body.id }).then(group => {
-      if (!group) {
-        return res.status(400).json({ group: "Group not found" });
-      } else {
-       console.log(group);
-       // activeUsers and chatLog 
-       res.json(group);
-      };
+  Group.findOne({ groupName: req.body.id })
+  .then(group => {
+    if (!group) {
+      return res.status(400).json({ group: "Group not found" });
+    } else {
+      // should give us activeUsers and chatLog of group
+      //  to pass into chat components
+      console.log(group);
+      res.json(group);
+    };
   });
 });
 
-router.post("/:id", (req, res) => {
+router.post("/:name", (req, res) => {
   // find the group with the id and return the necessary data
-  Group.findOne({ groupName: req.params.id }).then(group => {
+  Group.findOne({ groupName: req.params.name }).then(group => {
+    // make sure we dont overwrite an existing group
     if (group) {
       return res.status(400).json({ group: `Group ${groupName} already exists` });
     } else {
-      // validate user has access to that group
+      // create the group if doesn't exist
       Group({
-        groupName: req.params.id,
+        groupName: req.params.name,
         activeUsers: [],
         chatLog: []
       })
@@ -41,6 +44,22 @@ router.post("/:id", (req, res) => {
       })
       .catch(err => console.log(err));
     }
+  });
+});
+
+// @route GET api/groups
+// @desc Get All Groups
+// @access Private
+router.get("/", (req, res) => {
+  // find the group with the id and return the necessary data
+  Group.find({})
+  .then(groups => {
+    if (!groups) {
+      return res.status(400).json({ group: "No groups found in database" });
+    } else {
+      console.log(groups);
+      res.json(groups);
+    };
   });
 });
 

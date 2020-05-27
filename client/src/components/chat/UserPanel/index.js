@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css"
 
-
+// user panel component, should be passed list of active users
 function UserPanel({activeUsers}) {
   //console.log(activeUsers)
   return (

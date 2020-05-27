@@ -4,6 +4,8 @@
 .text-white {
     color: #fff ;
 }
+
+/* Backgrounds */
 .ui-bg-overlay-container, .ui-bg-video-container {
     position: relative;
 }
@@ -32,7 +34,6 @@
 }
 .ui-bg-overlay-container>*, .ui-bg-video-container>* {
     position: relative;
-
 }
 
 .d-flex, .d-inline-flex, .media, .media>:not(.media-body), .jumbotron, .card {
@@ -41,11 +42,12 @@
 }
 .rounded-circle {
     max-width: 30%;
-
 }
 .opacity-75 {
     opacity: .75 ;
 }
+
+/* Nav */
 .tabs-alt.nav-tabs .nav-link.active, .tabs-alt.nav-tabs .nav-link.active:hover, .tabs-alt.nav-tabs .nav-link.active:focus, .tabs-alt>.nav-tabs .nav-link.active, .tabs-alt>.nav-tabs .nav-link.active:hover, .tabs-alt>.nav-tabs .nav-link.active:focus {
     -webkit-box-shadow: 0 -2px 0 #26B4FF inset;
     box-shadow: 0 -2px 0 #26B4FF inset;
