@@ -42,7 +42,9 @@ class Dashboard extends Component {
               <div className="container">
                 <div className="row align-items-center justify-content-center">
                   <div className="col-md-12">
-                    <h2 className="heading mb-3">Hey there, {user.name}</h2>
+                    <br></br>
+                    <br></br>
+                    <h2 className="heading mt-3">Hey there, {user.name}</h2>
                     <div className="sub-heading">
                       <p className="mb-4">
                         You are logged into a full-stack{" "}
