@@ -18,6 +18,7 @@ class Chat extends React.Component {
     this.state = {
       activeUsers: [this.props.userName],
       messageLog: [],
+      group: this.props.auth.user.group
     };
   }
   // potential needed data:
@@ -75,8 +76,6 @@ class Chat extends React.Component {
     socket.on('login', (data) => {
       // data should have active users, previous messages and we should set that to the state below
       console.log("MSG LOG", data.messageLog)
-      console.log("GROUPS")
-      console.log(user.groups);
       connected = true;
       // Display the welcome message
       let message = `Welcome to ${this.props.groupName}`;
