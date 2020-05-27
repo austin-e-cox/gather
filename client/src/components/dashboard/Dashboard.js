@@ -11,10 +11,6 @@ class Dashboard extends Component {
   };
   render() {
     const { user } = this.props.auth;
-<<<<<<< HEAD
-=======
-
->>>>>>> af0a5e4cb639632d5e006903ef4d543b8e117c43
     return (
       <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
         <div className="container">
