@@ -13,14 +13,20 @@ let reconnect_attempt = 0;
 class Chat extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   timestamp: 'no timestamp yet',
-    // }
     this.state = {
       activeUsers: [this.props.userName],
       messageLog: [],
     };
   }
+  // potential needed data:
+  //  groupName
+  //  userName
+  //  userStatus
+  //  userList
+  //  userStatusList
+  //  message
+  //  messageLog
+  //  userInput
 
   getParticipantsMessage() {
     let message = '';
@@ -59,15 +65,6 @@ class Chat extends React.Component {
   }
 
   componentDidMount() {
-    // socket.on('timer', (data) => {
-    //   console.log(data)
-    //   this.setState({
-    //     timestamp: data
-    //   });
-    // })
-
-    // socket.emit('subscribeToTimer', 1000);
-
     // tell server we are logging in
     socket.emit('add user', this.props.userName);
 
@@ -86,9 +83,6 @@ class Chat extends React.Component {
       this.removeChatTyping()
       console.log("LOGGED IN")
       this.setState({activeUsers: data.activeUsers, messageLog: [...data.messageLog, {userName: "", message: message}, {userName: "", message: welcomeMessage}]});
-
-      // ALSO NEED TO set userNames, log history
-      // this.setState({...this.state, activeUsers: data.activeUsers messageLog: data.messageLog})
     });
 
     // Whenever the server emits 'new message', update the chat body
@@ -152,15 +146,6 @@ class Chat extends React.Component {
     });
 
   }
-
-  //groupName
-  //userName
-  //userStatus
-  //userList
-  //userStatusList
-  //message
-  //messageLog
-  //userInput
 
   render() {
     return (

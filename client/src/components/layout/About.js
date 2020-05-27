@@ -3,8 +3,6 @@ import React from 'react';
 const About = () => {
   return(
   <>
-   
-
     <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
         <div className="row align-items-center justify-content-center">
@@ -35,9 +33,6 @@ const About = () => {
         </div>
       </div>
     </section>
-
-
-
   </>
   )
 };

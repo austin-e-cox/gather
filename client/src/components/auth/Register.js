@@ -84,7 +84,8 @@ class Register extends Component {
                   />
                   <span style={{color: 'red'}}>{errors.name}</span>
                 </div>
-                <div className="form-group">
+                <div className="form-g
+                roup">
                   <input
                     type="text"
                     placeholder="Email"

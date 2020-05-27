@@ -1,22 +1,23 @@
 import React from "react";
 import "./style.css"
 
-
+// user panel component, should be passed list of active users
 function UserPanel({activeUsers}) {
   //console.log(activeUsers)
   return (
     <div>
-    <h1>Active users:</h1>
-    {activeUsers.length===0 ?
-      <h3>No active users currently</h3>
-      :
-      <ul className="list-unstyled">
-        {activeUsers.map((name,i) => (
-          <li key={name+"__key__"+i} >{name}</li>
-          ))
-        }
-      </ul>
-    }
+      <h1>Active users:</h1>
+
+      {activeUsers.length===0 ?
+        <h3>No active users currently</h3>
+        :
+        <ul className="list-unstyled">
+          {activeUsers.map((name,i) => (
+            <li key={name+"__key__"+i} >{name}</li>
+            ))
+          }
+        </ul>
+      }
     </div>
   );
 }

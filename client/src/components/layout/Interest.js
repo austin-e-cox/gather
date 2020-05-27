@@ -3,8 +3,6 @@ import React from 'react';
 const Interest = () => {
   return(
   <>
-   
-
     <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
         <div className="row align-items-center justify-content-center">
@@ -45,8 +43,7 @@ const Interest = () => {
               <div className="checkbox">
                 <label><input type="checkbox" value="Crafts"></input></label>
               </div>
-            
-             
+
               <div className="form-group">
                 <input type="submit" className="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Save"/>
               </div>
@@ -56,9 +53,6 @@ const Interest = () => {
         </div>
       </div>
     </section>
-
-
-
   </>
   )
 };
