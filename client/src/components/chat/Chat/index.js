@@ -151,7 +151,7 @@ class Chat extends React.Component {
 
   render() {
     const { user } = this.props.auth;
-    console.log(user);
+
     return (
       <div className="App">
        
