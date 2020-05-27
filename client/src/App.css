@@ -38,7 +38,7 @@
   .pb_cover > .container{
     position: relative; }
     .pb_cover > .container > .row {
-      height: 100vh; }
+      min-height: 100vh; }
      
   
   .pb_cover .heading{
@@ -77,6 +77,7 @@
 .pb_gradient_v1:before {
   background: #665fee;
   background: linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+  
   
   content: "";
   position: absolute;

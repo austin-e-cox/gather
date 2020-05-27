@@ -14,11 +14,7 @@ function UserPanel({activeUsers}) {
               <div className="recent_heading">
                 <h4>UserName</h4>
               </div>
-              <div className="srch_bar">
-                <div className="stylish-input-group">
-                  <input type="text" className="search-bar" placeholder="Search" />
-                </div>
-              </div>
+              
  </div>
 
 <div className="inbox_chat scroll">
