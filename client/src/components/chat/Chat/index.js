@@ -3,6 +3,8 @@ import openSocket from 'socket.io-client';
 import "./style.css"
 import UserPanel from "../UserPanel"
 import ChatWindow from "../ChatWindow"
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const socket = openSocket('http://localhost:8001');
 
@@ -150,6 +152,8 @@ class Chat extends React.Component {
   }
 
   render() {
+    const { user } = this.props.auth;
+
     return (
       <div className="App">
         <UserPanel activeUsers={this.state.activeUsers}/>
@@ -159,4 +163,12 @@ class Chat extends React.Component {
   }
 }
 
-export default Chat;
+Chat.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(
+  mapStateToProps
+)(Chat);
