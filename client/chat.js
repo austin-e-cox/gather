@@ -4,17 +4,19 @@ var numUsers = 0;
 let messageLog = [];
 
 io.on('connection', (socket) => {
-  socket.on('subscribeToTimer', (interval) => {
-    console.log('client is subscribing to timer with interval ', interval);
-    setInterval(() => {
-      socket.emit('timer', new Date());
-    }, interval);
-  });
-
-
   var addedUser = false;
   let activeUsers = [];
 
+  // pass user to group
+  socket.on('join group', (data) => {
+    if (!data){
+      socket.emit("disconnecting")
+      socket.disconnect()
+    }
+    socket.join(data);
+    console.log("user has joined group", data)
+  })
+  
   // when the client emits 'new message', this listens and executes
   socket.on('new message', (data) => {
     data = JSON.parse(data)
@@ -36,7 +38,7 @@ io.on('connection', (socket) => {
   // when the client emits 'add user', this listens and executes
   socket.on('add user', (userName) => {
     console.log("add user", userName)
-    if (addedUser) return;
+    //if (addedUser) return;
     
     // update number of users and message history
     activeUsers.push(userName)
@@ -48,7 +50,7 @@ io.on('connection', (socket) => {
     // we store the username in the socket session for this client
     socket.userName = userName;
     ++numUsers;
-    addedUser = true;
+    //addedUser = true;
     let m = messageLog;
     if (m.length > 5){
       m = m.slice(m.length-5,m.length)

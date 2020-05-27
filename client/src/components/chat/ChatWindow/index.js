@@ -3,7 +3,7 @@ import "./style.css"
 import ChatLog from "../ChatLog"
 import InputArea from "../InputArea"
 
-function ChatWindow({ userName, groupName, messageLog, socket }) {
+function ChatWindow({ userName, messageLog, socket }) {
   return (
     <div>
       <ChatLog messageLog={messageLog}/>
