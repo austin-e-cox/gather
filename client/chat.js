@@ -1,4 +1,5 @@
 const io = require('socket.io')();
+const axios = require('axios');
 
 var numUsers = 0;
 let messageLog = [];
@@ -21,7 +22,18 @@ io.on('connection', (socket) => {
     messageLog.push({
       userName: data.userName,
       message: data.message
-    })
+    });
+
+    // TODO DAVID
+    const message = {
+      userId: data.userName,
+      message: data.message
+    };
+
+    axios.post(`/addChat/${groupName}`, message, (req, res) => {
+      console.log(req);
+    });
+
     // we tell the client to execute 'new message'
     socket.emit('new message', JSON.stringify({
       userName: data.userName,
@@ -37,7 +49,7 @@ io.on('connection', (socket) => {
   socket.on('add user', (userName) => {
     console.log("add user", userName)
     if (addedUser) return;
-    
+
     // update number of users and message history
     activeUsers.push(userName)
     messageLog.push({
@@ -88,7 +100,7 @@ io.on('connection', (socket) => {
       messageLog.push({
         userName: socket.userName,
         message: "user left"
-      })  
+      })
 
       // echo globally that this client has left
       console.log("user left", socket.userName)

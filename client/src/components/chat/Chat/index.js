@@ -154,7 +154,7 @@ class Chat extends React.Component {
 
     return (
       <div className="App">
-       
+
         <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
       <div className="container">
       <div className="row align-items-center justify-content-center">
@@ -162,18 +162,18 @@ class Chat extends React.Component {
       <h2 className="heading mb-3">You are in CHAT_NAME</h2>
       <div className="messaging">
         <div className="inbox_msg">
-         
+
             <UserPanel activeUsers={this.state.activeUsers}/>
-             
-             
-          
-           
+
+
+
+
 
           <div className="mesgs">
-           
+
              <ChatWindow groupName={this.props.groupName} userName={this.props.userName} connected={connected} socket={socket} messageLog={this.state.messageLog} />
 
-           
+
 
           </div>
         </div>
