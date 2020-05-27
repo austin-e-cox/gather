@@ -69,8 +69,8 @@ class Chat extends React.Component {
 
   componentDidMount() {
     // tell server we are logging in
-    socket.emit('add user', this.state.userName);
     socket.emit('join group', this.state.group);
+    socket.emit('add user', this.state.userName);
 
     // socket.on('connectToRoom', (data) => {
     //   console.log(data)
@@ -89,8 +89,7 @@ class Chat extends React.Component {
 
     socket.on('login', (data) => {
       // data should have active users, previous messages and we should set that to the state below
-      console.log("MSG LOG", data.messageLog)
-      console.log("Active users", data.activeUsers)
+      //console.log("MSG LOG", data.messageLog)
       if (data.activeUsers)
         this.setState({...this.state, activeUsers: data.activeUsers});
       console.log("Active users", this.state.activeUsers)
@@ -102,7 +101,7 @@ class Chat extends React.Component {
         data.messageLog = []
       }
       this.removeChatTyping()
-      console.log("LOGGED IN")
+      //console.log("LOGGED IN")
       this.setState({activeUsers: data.activeUsers, messageLog: [...data.messageLog, {userName: "", message: message}, {userName: "", message: welcomeMessage}]});
     });
 
@@ -116,8 +115,8 @@ class Chat extends React.Component {
 
     // Whenever the server emits 'user joined', log it in the chat body and update the user list
     socket.on('user joined', (data) => {
+      //console.log("user joined")
       data = JSON.parse(data);
-      console.log("user joined")
       let message = data.userName + ' joined';
       this.removeChatTyping()
       this.setState({...this.state, activeUsers: [...this.state.activeUsers, data.userName], messageLog: [...this.state.messageLog, {userName: "", message: message}]});
@@ -183,7 +182,7 @@ class Chat extends React.Component {
                   <div className="inbox_msg">
                     <UserPanel activeUsers={this.state.activeUsers}/>
                       <div className="mesgs">
-                        <ChatWindow userName={this.props.userName} connected={connected} socket={socket} messageLog={this.state.messageLog} />
+                        <ChatWindow userName={this.state.userName} connected={connected} socket={socket} messageLog={this.state.messageLog} />
                       </div>
                   </div>
                 </div>
