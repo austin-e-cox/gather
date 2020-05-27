@@ -57,7 +57,7 @@ class Dashboard extends Component {
                         <Link key={group._id} to="/chat" style={{textDecoration: 'none', listStyle: 'none'}}>
                           <div className="col-sm-3 align-self-center" style={{minWidth: '300px'}}>
                             <form action="#" className="bg-light rounded pb_form_v1">
-                              <h2 className="mb-4 mt-0 text-center">{group.groupName}</h2>
+                              <h2 className="mb-4 mt-0 text-left">{group.groupName}</h2>
                               <div className="form-group">
                                 <ul>
                                   <li>Active Users: {group.activeUsers}</li>
