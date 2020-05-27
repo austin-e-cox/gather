@@ -11,7 +11,7 @@ function ChatLog({messageLog}) {
       <ul>
       {messageLog.map((messageItem, ind) =>
       // switch for if userName is empty (automated room message)
-        messageItem.userName==="" ?
+        !messageItem.userName ?
         <li key={ind}>{messageItem.message}</li>
         :
         <li key={ind}>{messageItem.userName}: {messageItem.message}</li>
