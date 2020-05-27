@@ -9,27 +9,31 @@ io.on('connection', (socket) => {
 
   // pass user to group
   socket.on('join group', (data) => {
-    if (!data){
+    let room = data;
+    if (!room){
       socket.emit("disconnecting")
       socket.disconnect()
     }
-    socket.join(data);
-    console.log("user has joined group", data)
+    socket.join(data, () => {
+      console.log("user has joined group", room)
+      //console.log(socket.rooms)
+    })
   })
   
   // when the client emits 'new message', this listens and executes
   socket.on('new message', (data) => {
+    console.log("new message", data)
+    let room = Object.keys(socket.rooms)[Object.keys(socket.rooms).length-1];
+    //console.log("room",room)
+    //console.log("rooms",Object.keys(socket.rooms))
+    // userName, userId, message
     data = JSON.parse(data)
     messageLog.push({
       userName: data.userName,
       message: data.message
     })
     // we tell the client to execute 'new message'
-    socket.emit('new message', JSON.stringify({
-      userName: data.userName,
-      message: data.message
-    }));
-    socket.broadcast.emit('new message', JSON.stringify({
+    io.sockets.in(room).emit('new message', JSON.stringify({
       userName: data.userName,
       message: data.message
     }));
@@ -37,6 +41,7 @@ io.on('connection', (socket) => {
 
   // when the client emits 'add user', this listens and executes
   socket.on('add user', (userName) => {
+    let room = Object.keys(socket.rooms)[Object.keys(socket.rooms).length-1];
     console.log("add user", userName)
     //if (addedUser) return;
     
@@ -48,20 +53,20 @@ io.on('connection', (socket) => {
     })
 
     // we store the username in the socket session for this client
-    socket.userName = userName;
+    io.sockets.in(room).userName = userName;
     ++numUsers;
     //addedUser = true;
     let m = messageLog;
     if (m.length > 5){
       m = m.slice(m.length-5,m.length)
     }
-    socket.emit('login', {
+    io.sockets.in(room).emit('login', {
       activeUsers: activeUsers,
       messageLog: m
     });
     // echo globally (all clients) that a person has connected
     console.log("emmiting user joined",)
-    socket.broadcast.emit('user joined', JSON.stringify({
+    io.sockets.in(room).emit('user joined', JSON.stringify({
       userName: userName,
       numUsers: numUsers
     }));
@@ -69,18 +74,21 @@ io.on('connection', (socket) => {
 
   // when the client emits 'typing', we broadcast it to others
   socket.on('typing', () => {
+    let room = Object.keys(socket.rooms)[Object.keys(socket.rooms).length-1];
     //console.log("typing")
-    socket.broadcast.emit('typing', socket.userName);
+    io.sockets.in(room).emit('typing', socket.userName);
   });
 
   // when the client emits 'stop typing', we broadcast it to others
   socket.on('stop typing', () => {
+    let room = Object.keys(socket.rooms)[Object.keys(socket.rooms).length-1];
     //console.log("stop typing")
-    socket.broadcast.emit('stop typing', socket.userName);
+    io.sockets.in(room).emit('stop typing', socket.userName);
   });
 
   // when the user disconnects.. perform this
   socket.on('disconnect', () => {
+    let room = Object.keys(socket.rooms)[Object.keys(socket.rooms).length-1];
     console.log("disconnect")
     if (addedUser) {
       --numUsers;
@@ -94,7 +102,7 @@ io.on('connection', (socket) => {
 
       // echo globally that this client has left
       console.log("user left", socket.userName)
-      socket.broadcast.emit('user left', JSON.stringify({
+      io.sockets.in(room).emit('user left', JSON.stringify({
         userName: socket.userName,
         numUsers: numUsers
       }));
