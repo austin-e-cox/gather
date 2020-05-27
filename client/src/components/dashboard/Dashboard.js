@@ -11,14 +11,16 @@ class Dashboard extends Component {
   };
   render() {
     const { user } = this.props.auth;
+<<<<<<< HEAD
+=======
+
+>>>>>>> af0a5e4cb639632d5e006903ef4d543b8e117c43
     return (
       <section className="pb_cover overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
         <div className="container">
-
           <div className="row align-items-center justify-content-center">
             <div className="col-md-12">
               <h2 className="heading mb-3">Hey there, {user.name}</h2>
-
               <div className="sub-heading">
                 <p className="mb-4">
                   You are logged into a full-stack{" "}
@@ -26,10 +28,10 @@ class Dashboard extends Component {
                 </p>
               </div>
             </div>
-            <Link to="/chat">
-              <div className="col-sm-3  align-self-center">
+            <Link to="/chat" style={{textDecoration: 'none', listStyle: 'none'}}>
+              <div className="col-sm-3 align-self-center" style={{minWidth: '300px'}}>
                 <form action="#" className="bg-light rounded pb_form_v1">
-                  <h2 className="mb-4 mt-0 text-center">Chat Category 1</h2>
+                  <h2 className="mb-4 mt-0 text-center">Football</h2>
                   <div className="form-group">
                     <ul>
                       <li> 1 stuff</li>
@@ -39,18 +41,17 @@ class Dashboard extends Component {
                 </form>
               </div>
             </Link>
-
-            <Link to="/chat">
-              <div className="col-sm-3 align-self-center">
+            <Link to="/chat" style={{textDecoration: 'none', listStyle: 'none'}}>
+              <div className="col-sm-3  align-self-center" style={{minWidth: '300px'}}>
                 <form action="#" className="bg-light rounded pb_form_v1">
-                <h2 className="mb-4 mt-0 text-center">Chat Category 1</h2>
-                <div className="form-group">
-                  <ul>
-                    <li> 1 stuff</li>
-                    <li> 2 stuff</li>
-                  </ul>
-                </div>
-              </form>
+                  <h2 className="mb-4 mt-0 text-center">Seattle</h2>
+                  <div className="form-group">
+                    <ul>
+                      <li> 1 stuff</li>
+                      <li> 2 stuff</li>
+                    </ul>
+                  </div>
+                </form>
               </div>
             </Link>
           </div>
