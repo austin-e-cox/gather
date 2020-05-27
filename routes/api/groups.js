@@ -47,5 +47,21 @@ router.post("/:name", (req, res) => {
   });
 });
 
+// @route GET api/groups
+// @desc Get All Groups
+// @access Private
+router.get("/", (req, res) => {
+  // find the group with the id and return the necessary data
+  Group.find({})
+  .then(groups => {
+    if (!groups) {
+      return res.status(400).json({ group: "No groups found in database" });
+    } else {
+      console.log(groups);
+      res.json(groups);
+    };
+  });
+});
+
 
 module.exports = router;
