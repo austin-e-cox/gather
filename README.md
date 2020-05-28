@@ -1,10 +1,10 @@
-# gather
+# Gather
 This project utilizes Mongo, Express, React and Node.js to allow users to join rooms based on common interests and communicate.
 
 ## Functionality
 A Registration and Login system ensure that only registered users are able to log in and communicate on the application.
 Once a user logs in, they have a number of groups displayed that they may join.
-When they click a group, it will bring them into a chat room where they can communicate with other users.
+When they click a group, it will bring them into a chat room where they can communicate with other users in that room.
 For each group and user, we store and recall data to Mongo databases by way of utilizing Mongoose.
 
 ## Run
@@ -18,3 +18,12 @@ Repo: https://github.com/davidshur/gather
 
 ## Deployed App
 App: https://gather-mern.herokuapp.com/
+
+## Modules
+Mongo/Mongoose
+Express/Axios
+React/Redux
+Node.js
+Passport
+Bootstrap
+Socket.io
