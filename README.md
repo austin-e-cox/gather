@@ -20,10 +20,11 @@ Repo: https://github.com/davidshur/gather
 App: https://gather-mern.herokuapp.com/
 
 ## Modules
-Mongo/Mongoose
-Express/Axios
-React/Redux
-Node.js
-Passport
-Bootstrap
-Socket.io
+* Mongo/Mongoose
+* Express/Axios
+* React/Redux
+* Node.js
+* Passport
+* Bootstrap
+* Socket.io
+* ...
