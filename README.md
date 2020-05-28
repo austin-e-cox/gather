@@ -11,7 +11,7 @@ For each group and user, we store and recall data to Mongo databases by way of u
 Before running, if the user wants to run in dev mode in chrome, the user must install the Redux DevTools application.
 Once that is installed, in the main folder, run <code>npm i</code> to install the top level modules,
 then change to the client directory (<code>cd client</code>) and run <code>npm i</code> again
-to install the client modules. change directory back to the main folder and run npm start dev to start the chat, server and client.
+to install the client modules. change directory back to the main folder and run <code>npm run dev</code> to start the chat, server and client.
 
 ## Repository
 Repo: https://github.com/davidshur/gather
