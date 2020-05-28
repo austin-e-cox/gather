@@ -115,4 +115,6 @@ dist
 .yarn/build-state.yml
 .pnp.*
 client/build
+
+# rm build
 build/

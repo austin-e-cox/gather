@@ -3,6 +3,7 @@ const router = express.Router();
 
 // Load User model
 const Group = require("../../models/Group");
+const ChatMessage = require('../../models/ChatMessage');
 
 // @route GET api/groups
 // @desc Get Group
@@ -23,6 +24,27 @@ router.get("/:id", (req, res) => {
     };
   });
 });
+
+// // Route for posting a ChatMessage to the ChatLog... TODO DAVID
+// router.post('/addChat/:name', (req, res) => {
+//   Group.findOne({ groupName: req.params.name })
+//     .then(group => {
+//       group.save(() => {
+//         if (err) throw err;
+
+//         const message = new ChatMessage({
+//           userId: req.body.userId,
+//           message: req.body.message
+//         });
+
+//         message.save(() => {
+//           if (err) throw err;
+//         });
+//       });
+//     });
+// });
+
+
 
 router.post("/:name", (req, res) => {
   // find the group with the id and return the necessary data
@@ -57,11 +79,10 @@ router.get("/", (req, res) => {
     if (!groups) {
       return res.status(400).json({ group: "No groups found in database" });
     } else {
-      console.log(groups);
+      //console.log("available groups",groups);
       res.json(groups);
     };
   });
 });
-
 
 module.exports = router;

@@ -54,7 +54,7 @@ class Dashboard extends Component {
                   </div>
                     {
                       this.state.groups.map(group => (
-                        <Link key={group._id} to="/chat" style={{textDecoration: 'none', listStyle: 'none'}}>
+                        <Link key={group._id} to="/chat" onClick={() => user.group = group._id} style={{textDecoration: 'none', listStyle: 'none'}}>
                           <div className="col-sm-3 align-self-center" style={{minWidth: '300px'}}>
                             <form action="#" className="bg-light rounded pb_form_v1">
                               <h2 className="mb-4 mt-0 text-left">{group.groupName}</h2>
