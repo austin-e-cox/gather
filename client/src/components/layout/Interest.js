@@ -21,27 +21,27 @@ const Interest = () => {
             <form action="#" className="bg-white rounded pb_form_v1">
               <h2 className="mb-4 mt-0 text-left">Select your Interests</h2>
               <div className="checkbox">
-                <label><input type="checkbox" value="Health"></input></label>
+               <input type="checkbox" value="Health"></input><label>Health</label>
               </div>
               
               <div className="checkbox">
-                <label><input type="checkbox" value="Gaming"></input></label>
+               <input type="checkbox" value="Gaming"></input><label>Gaming</label>
               </div>
               
               <div className="checkbox">
-                <label><input type="checkbox" value="Food"></input></label>
+               <input type="checkbox" value="Food"></input><label>Food</label>
               </div>
 
               <div className="checkbox">
-                <label><input type="checkbox" value="Music"></input></label>
+               <input type="checkbox" value="Music"></input><label>Music</label>
               </div>
               
               <div className="checkbox">
-                <label><input type="checkbox" value="Movies"></input></label>
+                <input type="checkbox" value="Movies"></input><label>Movies</label>
               </div>
               
               <div className="checkbox">
-                <label><input type="checkbox" value="Crafts"></input></label>
+                  <input type="checkbox" value="Crafts"></input><label>Crafts</label>
               </div>
 
               <div className="form-group">
