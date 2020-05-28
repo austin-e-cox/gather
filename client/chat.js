@@ -33,14 +33,14 @@ io.on('connection', (socket) => {
     });
 
     // TODO DAVID
-    const message = {
-      userId: data.userName,
-      message: data.message
-    };
+    // const message = {
+    //   userId: data.userName,
+    //   message: data.message
+    // };
 
-    axios.post(`/addChat/${groupName}`, message, (req, res) => {
-      console.log(req);
-    });
+    // axios.post(`/addChat/${groupName}`, message, (req, res) => {
+    //   console.log(req);
+    // });
 
     // we tell the client to execute 'new message'
     io.to(room).emit('new message', JSON.stringify({
@@ -52,7 +52,6 @@ io.on('connection', (socket) => {
   // when the client emits 'add user', this listens and executes
   socket.on('add user', (userName) => {
     console.log("add user", userName)
-    if (addedUser) return;
 
     // update number of users and message history
     activeUsers.push(userName)

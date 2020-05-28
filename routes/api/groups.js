@@ -25,24 +25,24 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// Route for posting a ChatMessage to the ChatLog... TODO DAVID
-router.post('/addChat/:name', (req, res) => {
-  Group.findOne({ groupName: req.params.name })
-    .then(group => {
-      group.save(() => {
-        if (err) throw err;
+// // Route for posting a ChatMessage to the ChatLog... TODO DAVID
+// router.post('/addChat/:name', (req, res) => {
+//   Group.findOne({ groupName: req.params.name })
+//     .then(group => {
+//       group.save(() => {
+//         if (err) throw err;
 
-        const message = new ChatMessage({
-          userId: req.body.userId,
-          message: req.body.message
-        });
+//         const message = new ChatMessage({
+//           userId: req.body.userId,
+//           message: req.body.message
+//         });
 
-        message.save(() => {
-          if (err) throw err;
-        });
-      });
-    });
-});
+//         message.save(() => {
+//           if (err) throw err;
+//         });
+//       });
+//     });
+// });
 
 
 
