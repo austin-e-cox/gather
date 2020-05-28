@@ -28,3 +28,7 @@ App: https://gather-mern.herokuapp.com/
 * Bootstrap
 * Socket.io
 * ...
+
+## Previews
+![Dashboard Preview](/preview_select_group.png?raw=true "Dashboard Preview")
+![Chat Preview](/chat_preview.png?raw=true "Chat Preview")
