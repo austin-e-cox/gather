@@ -36,7 +36,7 @@ class Chat extends React.Component {
   getParticipantsMessage() {
     let message = '';
     if (this.state.activeUsers.length === 1) {
-      message += "Flying solo for now.";
+      //message += "Flying solo for now.";
     } else {
       message += "There are " + this.state.activeUsers.length + " participants";
     }
@@ -96,13 +96,13 @@ class Chat extends React.Component {
       connected = true;
       // Display the welcome message
       let message = `Welcome to ${this.state.group}`;
-      let welcomeMessage = this.getParticipantsMessage();
+      //let welcomeMessage = this.getParticipantsMessage();
       if (!data.messageLog){
         data.messageLog = []
       }
       this.removeChatTyping()
-      //console.log("LOGGED IN")
-      this.setState({activeUsers: data.activeUsers, messageLog: [...data.messageLog, {userName: "", message: message}, {userName: "", message: welcomeMessage}]});
+      //console.log("LOGGED IN") //{userName: "", message: welcomeMessage}
+      this.setState({activeUsers: data.activeUsers, messageLog: [...data.messageLog, {userName: "", message: message}]});
     });
 
     // Whenever the server emits 'new message', update the chat body
@@ -145,7 +145,9 @@ class Chat extends React.Component {
 
     socket.on('disconnect', () => {
       let message = 'you have been disconnected';
-      this.setState({...this.state, messageLog: [...this.state.messageLog, {userName: "", message: message}]})
+      let users = this.state.activeUsers.filter(function(value){ return value !== socket.userName;});
+
+      this.setState({...this.state, activeUsers: users, messageLog: [...this.state.messageLog, {userName: "", message: message}]})
     });
 
     socket.on('reconnect', (data) => {
