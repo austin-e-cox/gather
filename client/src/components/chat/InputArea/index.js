@@ -73,7 +73,7 @@ function InputArea({userName, socket }) {
     <div className="type_msg">
       <div className="input_msg_write">
         <input type="text" className="write_msg" placeholder="Type a message" value={message} onChange={handleMessageChange} onKeyPress={handleKeyPress}/>
-        <button className="msg_send_btn" type="button"><i className="fa fa-paper-plane" aria-hidden="true" onSubmit={handleSubmit} /></button>
+        <button className="msg_send_btn" type="button"><i className="fa fa-paper-plane" aria-hidden="true" onClick={handleSubmit} /></button>
       </div>
     </div>
   );
